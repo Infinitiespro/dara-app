@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 
-import { SubscriptionPayment } from '@prisma/client';
 import { ChevronDown, ExternalLink } from 'lucide-react';
 import useSWR from 'swr';
 
@@ -47,7 +46,7 @@ interface SubscriptionSectionProps {
   nextPaymentDate?: Date | null;
   endDate?: Date | null;
   wallet: EmbeddedWallet;
-  paymentHistory?: SubscriptionPayment[];
+  paymentHistory?: any[];
   onSubscribe: () => Promise<void>;
   onUnsubscribe: () => Promise<void>;
   onReactivate: () => Promise<void>;
