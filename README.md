@@ -1,97 +1,85 @@
-# Dara
+<!-- Logo -->
+<p align="center">
+  <img src="./public/logo.svg" alt="Dara Logo" width="120" height="120" />
+</p>
 
-> The Intelligent Copilot for Solana
+<h1 align="center">Dara</h1>
 
-Dara is an **open-source**, full-stack application that combines advanced LLM models with blockchain technology. Built for the [Solana](https://solana.com/) ecosystem, Dara enables seamless, intelligent interactions with DeFi protocols, NFTs, and more.
+<p align="center"><b>The Intelligent Copilot for Solana</b></p>
+
+<p align="center">
+  <em>Futuristic, open-source AI for seamless Solana DeFi, NFT, and on-chain automation.</em>
+</p>
 
 ---
 
-## Quick Links
-
-- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/solana.svg" alt="App" width="18" style="vertical-align:middle;"/> [App](https://dara.sh)
-- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/readthedocs.svg" alt="Docs" width="18" style="vertical-align:middle;"/> [Docs](https://docs.dara.sh)
-- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/x.svg" alt="Twitter" width="18" style="vertical-align:middle;"/> [Twitter (X)](https://x.com/ask_Dara)
-- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/discord.svg" alt="Discord" width="18" style="vertical-align:middle;"/> [Discord](https://discord.gg/dara)
-- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg" alt="GitHub" width="18" style="vertical-align:middle;"/> [GitHub](https://git.new/dara)
+<p align="center">
+  <a href="https://dara.sh" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/App-18181B?logo=solana&logoColor=white&style=for-the-badge" alt="App" height="28" />
+  </a>
+  <a href="https://docs.dara.sh" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Docs-18181B?logo=readthedocs&logoColor=white&style=for-the-badge" alt="Docs" height="28" />
+  </a>
+  <a href="https://x.com/ask_Dara" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/X(Twitter)-18181B?logo=x&logoColor=white&style=for-the-badge" alt="Twitter X" height="28" />
+  </a>
+  <a href="https://discord.gg/dara" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Discord-18181B?logo=discord&logoColor=white&style=for-the-badge" alt="Discord" height="28" />
+  </a>
+  <a href="https://git.new/dara" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/GitHub-18181B?logo=github&logoColor=white&style=for-the-badge" alt="GitHub" height="28" />
+  </a>
+</p>
 
 ---
 
 ![Product Demo](./public/product.png)
 
-## Features
+## 🚀 Why Dara?
 
-- **Modern UI**: Responsive, mobile-first design with Tailwind CSS and Shadcn UI
-- **Intelligent Agent**: Natural language understanding for DeFi, NFTs, and Solana-native actions
-- **Smart Tools**: Advanced function-calling for complex blockchain operations
-- **Embedded Wallet**: Integrated wallet management and real-time portfolio insights
-- **DeFi Integration**: Swaps, staking, and cross-platform DeFi tools
-- **NFT Suite**: NFT collection management and analytics
-- **Live Analytics**: Real-time market trends and portfolio tracking
-- **Ecosystem Access**: Integrations with Jupiter, Magic Eden, and more
+Dara is your AI-native command center for the Solana blockchain. Effortlessly manage DeFi, NFTs, and on-chain automation with natural language, advanced analytics, and a beautiful, responsive UI. Built for speed, security, and extensibility.
 
-## Roadmap
+## ✨ Features
 
-We are building the most advanced interface for the Solana Network, enabling users to design AI agents for autonomous actions and custom strategies. Dara merges live blockchain data with real-time internet insights for a unified crypto management experience.
+- **Conversational AI**: Natural language chat for DeFi, NFTs, and Solana-native actions
+- **Embedded Wallet**: Secure, real-time portfolio and transaction management
+- **DeFi & NFT Integrations**: Jupiter, Magic Eden, Pump.fun, Dexscreener, and more
+- **Live Analytics**: Real-time market trends, token and NFT insights
+- **Automation**: Design agents for autonomous on-chain actions and strategies
+- **Modern UI**: Mobile-first, dark mode, and blazing fast
+- **Open Source**: Built with Next.js, TypeScript, Tailwind, Shadcn UI, and Radix UI
 
-### Core Infrastructure
-- [x] Landing Page
-- [x] User Model
-- [x] Chat Interface
-- [x] Chat Persistence
-- [x] Streaming Tool Components
-- [x] Embedded Wallet
-  - [ ] Migrate to Phantom Embedded Wallet
+## 🌐 Socials & Community
 
-### Agent Capabilities
-- [x] Multi-Tool Usage
-- [ ] Multimodal
-  - [x] Image
-  - [ ] Realtime Voice Conversation
-- [ ] Memory Layer
-- [ ] Web2 Integration
-  - [x] Web Scraping
-  - [ ] Twitter Search
+<p>
+  <a href="https://x.com/ask_Dara" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" width="24" style="vertical-align:middle;"/> @ask_Dara</a> &nbsp;
+  <a href="https://discord.gg/dara" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" width="24" style="vertical-align:middle;"/> Discord</a> &nbsp;
+  <a href="https://docs.dara.sh" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/readthedocs.svg" alt="Docs" width="24" style="vertical-align:middle;"/> Docs</a> &nbsp;
+  <a href="https://dara.sh" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/solana.svg" alt="App" width="24" style="vertical-align:middle;"/> App</a> &nbsp;
+  <a href="https://git.new/dara" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" width="24" style="vertical-align:middle;"/> GitHub</a>
+</p>
 
-### Solana Integration
-- [x] SNS (Solana Name Service) Resolver
-- [x] Wallet Portfolio
-- [ ] Transaction Parser
-- [x] NFT Operations
-- [x] Basic Token Operations
-  - [x] Send/Swap Tokens
-  - [x] Token Launch (pump.fun)
-- [x] DeFi Integration
-  - [x] Jupiter
-    - [x] Swaps
-    - [x] Price API v2
-    - [x] Verified Token Search
-    - [ ] Limit Orders
-    - [ ] DCA
-  - [x] Pump.Fun Integration
-    - [x] Deploy Token
-  - [x] Dexscreener Integration
-    - [x] Token Profile
-    - [x] Paid Orders Check
-  - [ ] Blinks Integration
-  - [x] Magic Eden Integration
+---
 
-### Market Intelligence
-- [x] Token Trends (via Defined.fi)
-- [x] NFT Trends (via Magic Eden)
+## 🛠️ Quick Start
 
-### Automation
-- [ ] Automated On-Chain Actions
-- [ ] Personalized Agent
-- [ ] Trading AI
+```bash
+pnpm install
+cp .env.example .env # configure your secrets
+pnpm dev
+```
+Visit [http://localhost:3000](http://localhost:3000) and start exploring Dara.
 
-## Getting Started
+For full setup, see [LOCAL_DEV.md](LOCAL_DEV.md).
 
-See [LOCAL_DEV.md](LOCAL_DEV.md) for local development instructions.
+---
 
-## Contributing
+## 🤝 Contributing
 
-We welcome contributions from the community! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions from the community! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and best practices.
 
-## License
+---
+
+## 📄 License
 
 MIT © Dara Projects
