@@ -65,10 +65,10 @@ const faqItems: FaqItem[] = [
         <div className="text-sm text-muted-foreground leading-relaxed">
           <ol className="list-decimal list-inside space-y-2">
             <li>Click on the wallet icon in the bottom left corner</li>
-            <li>Choose "Connect Wallet" from the options</li>
+            <li>Choose &quot;Connect Wallet&quot; from the options</li>
             <li>Select your preferred wallet (Phantom, Solflare, etc.)</li>
             <li>Approve the connection in your wallet</li>
-            <li>You're now ready to use Dara with your wallet!</li>
+            <li>You&apos;re now ready to use Dara with your wallet!</li>
           </ol>
           <p className="mt-4">
             Dara supports all major Solana wallets including Phantom, Solflare, Backpack, and more.
@@ -164,7 +164,7 @@ const faqItems: FaqItem[] = [
             <li><strong>DexScreener:</strong> For real-time market data and charts</li>
           </ul>
           <p className="mt-4">
-            We're constantly adding new integrations to provide you with the best DeFi experience on Solana.
+            We&apos;re constantly adding new integrations to provide you with the best DeFi experience on Solana.
           </p>
         </div>
       </div>
