@@ -1,15 +1,16 @@
-import fetch from 'node-fetch';
+// Defensive: move all imports and logic inside the handler to prevent build-time errors
+export async function POST(req: any) {
+  // Import only when handler is called
+  const fetch = (await import('node-fetch')).default;
+  const { getUserData } = await import('@/server/actions/user');
 
-import { getUserData } from '@/server/actions/user';
+  const DISCORD_API_BASE_URL = 'https://discordapp.com/api';
+  const BOT_TOKEN = process.env.DISCORD_BOT_TOKEN;
+  const GUILD_ID = process.env.DISCORD_GUILD_ID;
+  const ROLE_ID = process.env.DISCORD_ROLE_ID;
 
-const DISCORD_API_BASE_URL = 'https://discordapp.com/api';
-const BOT_TOKEN = process.env.DISCORD_BOT_TOKEN;
-const GUILD_ID = process.env.DISCORD_GUILD_ID;
-const ROLE_ID = process.env.DISCORD_ROLE_ID;
-
-export async function POST(req: Request) {
   if (!BOT_TOKEN || !GUILD_ID || !ROLE_ID) {
-    throw new Error('Discord environment variables not set');
+    return new Response('Discord environment variables not set', { status: 500 });
   }
 
   const userData = await getUserData();
@@ -19,7 +20,8 @@ export async function POST(req: Request) {
     return new Response('User does not have early access', { status: 403 });
   }
 
-  const { userId } = await req.json();
+  const body = await req.json();
+  const userId = body?.userId;
 
   if (!userId) {
     return new Response('User ID is required', { status: 400 });
