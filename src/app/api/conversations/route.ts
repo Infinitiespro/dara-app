@@ -1,9 +1,10 @@
-import { NextRequest, NextResponse } from 'next/server';
+// Defensive: move all imports and logic inside the handler to prevent build-time errors
+export async function GET(req: any) {
+  // Import only when handler is called
+  const { NextResponse } = await import('next/server');
+  const { verifyUser } = await import('@/server/actions/user');
+  const { dbGetConversations } = await import('@/server/db/queries');
 
-import { verifyUser } from '@/server/actions/user';
-import { dbGetConversations } from '@/server/db/queries';
-
-export async function GET(req: NextRequest) {
   try {
     const session = await verifyUser();
     const userId = session?.data?.data?.id;
