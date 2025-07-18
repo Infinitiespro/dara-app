@@ -8,7 +8,7 @@ import {
 
 export async function GET(
   req: NextRequest,
-  context: { params: { [key: string]: string } }
+  context: { params: { conversationId: string } }
 ) {
   const session = await verifyUser();
   const userId = session?.data?.data?.id;
