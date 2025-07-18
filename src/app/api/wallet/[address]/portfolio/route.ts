@@ -3,8 +3,8 @@ import { NextRequest } from 'next/server';
 import { searchWalletAssets } from '@/lib/solana/helius';
 import { transformToPortfolio } from '@/types/helius/portfolio';
 
-export async function GET(req: any, context: any) {
-  const address = context?.params?.address;
+export async function GET(req: any, context: { params: Promise<{ address: string }> }) {
+  const { address } = await context.params;
   if (!address) {
     return new Response(JSON.stringify({ error: 'Missing address' }), { status: 400 });
   }

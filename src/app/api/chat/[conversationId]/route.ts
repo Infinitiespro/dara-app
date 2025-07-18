@@ -1,6 +1,6 @@
 // Defensive top-level param check for Next.js build quirks
-export async function GET(req: any, context: any) {
-  const conversationId = context?.params?.conversationId;
+export async function GET(req: any, context: { params: Promise<{ conversationId: string }> }) {
+  const { conversationId } = await context.params;
   if (!conversationId) {
     return new Response(JSON.stringify({ error: 'Missing conversationId' }), { status: 400 });
   }
