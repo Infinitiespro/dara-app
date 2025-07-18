@@ -3,16 +3,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import { verifyUser } from '@/server/actions/user';
 import { dbDeleteAction, dbUpdateAction } from '@/server/db/queries';
 
-export async function DELETE(req: NextRequest) {
+export async function DELETE(req: any, context: any) {
+  const id = context?.params?.id;
+  if (!id) {
+    return new Response(JSON.stringify({ error: 'Missing id' }), { status: 400 });
+  }
   try {
     const session = await verifyUser();
     const userId = session?.data?.data?.id;
-
-    const id = req.nextUrl.pathname.split('/').pop();
-
-    if (!id) {
-      return NextResponse.json({ error: 'Missing action ID' }, { status: 400 });
-    }
 
     if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -37,16 +35,14 @@ export async function DELETE(req: NextRequest) {
   }
 }
 
-export async function PATCH(req: NextRequest) {
+export async function PATCH(req: any, context: any) {
+  const id = context?.params?.id;
+  if (!id) {
+    return new Response(JSON.stringify({ error: 'Missing id' }), { status: 400 });
+  }
   try {
     const session = await verifyUser();
     const userId = session?.data?.data?.id;
-
-    const id = req.nextUrl.pathname.split('/').pop();
-
-    if (!id) {
-      return NextResponse.json({ error: 'Missing action ID' }, { status: 400 });
-    }
 
     if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
