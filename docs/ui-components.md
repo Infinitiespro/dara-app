@@ -4,6 +4,7 @@ Dara uses a modular, reusable component system built with Shadcn UI, Radix UI, a
 
 ---
 
+
 ## Key Components
 - **Button**: Primary, outline, ghost, etc. (`/components/ui/button`)
 - **Card**: Surface container for content (`/components/ui/card`)

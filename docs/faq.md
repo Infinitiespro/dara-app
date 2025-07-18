@@ -6,6 +6,7 @@
 ## How do I connect my wallet?
 - After signing in, connect your Solana wallet in the account or home page.
 
+
 ## What if my wallet balance is incorrect?
 - Try refreshing the page. If the issue persists, check your wallet connection or contact support.
 

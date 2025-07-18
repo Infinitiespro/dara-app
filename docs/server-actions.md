@@ -4,6 +4,7 @@ Dara uses **next-safe-action** for type-safe, validated server actions. All acti
 
 ---
 
+
 ## Pattern
 - **Validation:** All actions use Zod schemas for input validation
 - **Type Safety:** next-safe-action provides type-safe client/server contracts

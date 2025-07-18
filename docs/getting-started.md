@@ -5,6 +5,7 @@ Welcome to Dara! Follow these steps to set up and run the app locally.
 ---
 
 ## Prerequisites
+
 - **Node.js** v18+
 - **pnpm** (recommended)
 - **PostgreSQL** (or your configured database)

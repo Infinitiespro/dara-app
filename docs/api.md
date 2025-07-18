@@ -4,6 +4,7 @@ Dara exposes both REST API endpoints and server actions for client-server commun
 
 ---
 
+
 ## Main Endpoints
 
 ### Chat

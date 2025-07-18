@@ -4,6 +4,7 @@ Dara is a modern, full-stack web app built with Next.js (App Router), React, Typ
 
 ---
 
+
 ## High-Level Diagram
 ```
 [ User ]

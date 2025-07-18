@@ -4,6 +4,7 @@ Dara integrates with the Solana ecosystem for wallet management, DeFi, and analy
 
 ---
 
+
 ## Supported Integrations
 - **Wallets**: Solana wallets via Privy (email, wallet connect)
 - **DeFi**: Jupiter (token swaps, price data)

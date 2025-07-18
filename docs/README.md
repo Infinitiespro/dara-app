@@ -4,6 +4,7 @@ Welcome to the **Dara** documentation! Dara is an AI-powered copilot for Solana,
 
 ---
 
+
 ## Overview
 - **Dara** is a Next.js 15 (App Router) application with a modern, responsive UI built using TypeScript, React, Shadcn UI, Radix UI, and Tailwind CSS.
 - It leverages AI for chat, insights, and automation, and integrates with Solana wallets and DeFi protocols.
