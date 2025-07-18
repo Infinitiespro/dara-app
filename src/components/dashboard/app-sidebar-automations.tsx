@@ -371,4 +371,59 @@ export const AppSidebarAutomations = () => {
       throw error;
     }
   };
-};
+
+  if (isUserLoading) {
+    return (
+      <SidebarGroup>
+        <SidebarGroupLabel>Automations</SidebarGroupLabel>
+        <div className="flex items-center justify-center">
+          <Loader2 className="mt-4 h-4 w-4 animate-spin" />
+        </div>
+      </SidebarGroup>
+    );
+  }
+
+  return (
+    <SidebarGroup>
+      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+        <div className="flex items-center justify-between pr-2">
+          <SidebarGroupLabel>Automations</SidebarGroupLabel>
+          <CollapsibleTrigger asChild>
+            <Button variant="ghost" size="sm" className="h-6 w-6 p-0">
+              <ChevronDown
+                className={cn(
+                  'h-4 w-4 transition-transform duration-200',
+                  isOpen ? '' : '-rotate-90',
+                )}
+              />
+            </Button>
+          </CollapsibleTrigger>
+        </div>
+        <CollapsibleContent className="data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
+          <SidebarGroupContent className="group-data-[collapsible=icon]:hidden">
+            {isActionsLoading ? (
+              <div className="flex items-center justify-center">
+                <Loader2 className="mt-4 h-4 w-4 animate-spin" />
+              </div>
+            ) : !actions?.length ? (
+              <p className="ml-2 text-xs text-muted-foreground">
+                No automations
+              </p>
+            ) : (
+              <SidebarMenu>
+                {actions.map((action: any) => (
+                  <ActionMenuItem
+                    key={action.id}
+                    action={action}
+                    onDelete={handleDelete}
+                    onEdit={handleEdit}
+                  />
+                ))}
+              </SidebarMenu>
+            )}
+          </SidebarGroupContent>
+        </CollapsibleContent>
+      </Collapsible>
+    </SidebarGroup>
+  );
+}
