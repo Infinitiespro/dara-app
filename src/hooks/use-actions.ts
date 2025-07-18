@@ -1,6 +1,5 @@
 'use client';
 
-import { Action } from '@prisma/client';
 import useSWR from 'swr';
 
 export function useActions(userId?: string) {
@@ -9,7 +8,7 @@ export function useActions(userId?: string) {
     isLoading,
     error,
     mutate,
-  } = useSWR<Action[]>(
+  } = useSWR<any[]>(
     userId ? '/api/actions' : null,
     async (url) => {
       const res = await fetch(url);
