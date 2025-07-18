@@ -185,7 +185,7 @@ const faqItems: FaqItem[] = [
             <li>Type your prompt in the chat interface</li>
             <li>After getting a response, click the bookmark icon next to the message</li>
             <li>Give your prompt a memorable title</li>
-            <li>Access your saved prompts from the "Saved Prompts" section in the sidebar</li>
+            <li>Access your saved prompts from the &quot;Saved Prompts&quot; section in the sidebar</li>
           </ol>
           <p className="mt-4">
             You can also organize your prompts by creating custom categories and tags for better organization.
@@ -294,7 +294,7 @@ export default function FaqPage() {
             <CardContent className="p-8">
               <h3 className="text-xl font-semibold mb-2">Still need help?</h3>
               <p className="text-muted-foreground mb-6">
-                Can't find what you're looking for? Our support team is here to help.
+                Can&apos;t find what you&apos;re looking for? Our support team is here to help.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
