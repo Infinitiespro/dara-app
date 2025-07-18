@@ -1,5 +1,3 @@
-import { PaymentStatus } from '@prisma/client';
-
 import prisma from '@/lib/prisma';
 import { searchWalletAssets } from '@/lib/solana/helius';
 import { canAffordSubscription, getSubPriceFloat } from '@/lib/utils';
@@ -92,7 +90,7 @@ export async function GET(request: Request) {
         await prisma.subscriptionPayment.update({
           where: { id: payment.id },
           data: {
-            status: PaymentStatus.SUCCESS,
+            status: 'SUCCESS',
             transactionHash: response.data?.signature,
           },
         });
