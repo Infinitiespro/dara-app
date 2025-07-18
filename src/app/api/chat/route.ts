@@ -1,45 +1,21 @@
-import { revalidatePath } from 'next/cache';
+// Defensive: move all imports and logic inside the handlers to prevent build-time errors
+import type { Message } from 'ai';
 
-import {
-  CoreTool,
-  Message,
-  NoSuchToolError,
-  appendResponseMessages,
-  createDataStreamResponse,
-  generateObject,
-  smoothStream,
-  streamText,
-} from 'ai';
-import { performance } from 'perf_hooks';
-import { z } from 'zod';
+export async function POST(req: any) {
+  // Import only when handler is called
+  const { performance } = await import('perf_hooks');
+  const { revalidatePath } = await import('next/cache');
+  const { z } = await import('zod');
+  const { NoSuchToolError, appendResponseMessages, createDataStreamResponse, generateObject, smoothStream, streamText } = await import('ai');
+  const { defaultModel, defaultSystemPrompt, defaultTools, getToolsFromRequiredTools } = await import('@/ai/providers');
+  const { MAX_TOKEN_MESSAGES } = await import('@/lib/constants');
+  const { isValidTokenUsage, logWithTiming } = await import('@/lib/utils');
+  const { getConfirmationResult, getUnconfirmedConfirmationMessage, handleConfirmation } = await import('@/lib/utils/ai');
+  const { generateTitleFromUserMessage } = await import('@/server/actions/ai');
+  const { getToolsFromOrchestrator } = await import('@/server/actions/orchestrator');
+  const { verifyUser } = await import('@/server/actions/user');
+  const { dbCreateConversation, dbCreateMessages, dbCreateTokenStat, dbDeleteConversation, dbGetConversationMessages } = await import('@/server/db/queries');
 
-import {
-  defaultModel,
-  defaultSystemPrompt,
-  defaultTools,
-  getToolsFromRequiredTools,
-} from '@/ai/providers';
-import { MAX_TOKEN_MESSAGES } from '@/lib/constants';
-import { isValidTokenUsage, logWithTiming } from '@/lib/utils';
-import {
-  getConfirmationResult,
-  getUnconfirmedConfirmationMessage,
-  handleConfirmation,
-} from '@/lib/utils/ai';
-import { generateTitleFromUserMessage } from '@/server/actions/ai';
-import { getToolsFromOrchestrator } from '@/server/actions/orchestrator';
-import { verifyUser } from '@/server/actions/user';
-import {
-  dbCreateConversation,
-  dbCreateMessages,
-  dbCreateTokenStat,
-  dbDeleteConversation,
-  dbGetConversationMessages,
-} from '@/server/db/queries';
-
-export const maxDuration = 120;
-
-export async function POST(req: Request) {
   const startTime = performance.now();
 
   // Check for valid user session and required parameters
@@ -55,7 +31,6 @@ export async function POST(req: Request) {
     // Use a default user ID for development
     const defaultUserId = 'cmd7z3yd90000r1hurs2u0ecp'; // This should match your actual user ID
     const defaultPublicKey = '8Jrij1uLLTe44Hn1es3EjejJxTp3f5Y9qNHTNAC1ahKj'; // Your active wallet
-    
     // return new Response('Unauthorized', { status: 401 });
     console.log('[chat/route] Using default user for development:', { defaultUserId, defaultPublicKey });
   }
@@ -209,7 +184,7 @@ export async function POST(req: Request) {
         const result = streamText({
           model: defaultModel,
           system: systemPrompt,
-          tools: tools as Record<string, CoreTool<any, any>>,
+          tools: tools as Record<string, any>, // Changed from CoreTool to any
           experimental_toolCallStreaming: true,
           experimental_telemetry: {
             isEnabled: true,
@@ -230,7 +205,7 @@ export async function POST(req: Request) {
             const tool = tools[toolCall.toolName as keyof typeof tools];
             const { object: repairedArgs } = await generateObject({
               model: defaultModel,
-              schema: tool.parameters as z.ZodType<any>,
+              schema: tool.parameters as any,
               prompt: [
                 `The model tried to call the tool "${toolCall.toolName}"` +
                   ` with the following arguments:`,
@@ -322,8 +297,8 @@ export async function POST(req: Request) {
               }
 
               revalidatePath('/api/conversations');
-            } catch (error) {
-              console.error('[chat/route] Failed to save messages', error);
+            } catch (err) {
+              console.error('[chat/route] Failed to save messages', err);
             }
           },
         });
@@ -334,27 +309,36 @@ export async function POST(req: Request) {
       },
     });
   } catch (error) {
-    console.error('[chat/route] Unexpected error:', error);
+    console.error('Error in chat POST:', error);
     return new Response('Internal Server Error', { status: 500 });
   }
 }
 
-export async function DELETE(req: Request) {
-  const session = await verifyUser();
-  const userId = session?.data?.data?.id;
-
-  if (!userId) {
-    return new Response('Unauthorized', { status: 401 });
-  }
+export async function DELETE(req: any) {
+  // Import only when handler is called
+  const { verifyUser } = await import('@/server/actions/user');
+  const { dbDeleteConversation } = await import('@/server/db/queries');
+  const { NextResponse } = await import('next/server');
 
   try {
-    const { id: conversationId } = await req.json();
-    await dbDeleteConversation({ conversationId, userId });
-    revalidatePath('/api/conversations');
+    const session = await verifyUser();
+    const userId = session?.data?.data?.id;
+    const { conversationId } = await req.json();
 
-    return new Response('Conversation deleted', { status: 200 });
+    if (!userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    if (!conversationId) {
+      return NextResponse.json({ error: 'Missing conversationId' }, { status: 400 });
+    }
+
+    await dbDeleteConversation({ conversationId, userId });
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('[chat/route] Delete error:', error);
-    return new Response('Internal Server Error', { status: 500 });
+    console.error('Error deleting conversation:', error);
+    return NextResponse.json(
+      { error: 'Internal Server Error' },
+      { status: 500 },
+    );
   }
 }
