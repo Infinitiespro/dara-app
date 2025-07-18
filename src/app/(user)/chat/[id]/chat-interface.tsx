@@ -368,14 +368,7 @@ function ChatMessage({
   setSavedPrompts,
   onPreviewImage,
   addToolResult,
-}: {
-  message: Message;
-  index: number;
-  messages: Message[];
-  setSavedPrompts: React.Dispatch<React.SetStateAction<any[]>>;
-  onPreviewImage: (preview: ImagePreview) => void;
-  addToolResult: (result: ToolResult) => void;
-}) {
+}: ChatMessageProps) {
   const isUser = message.role === 'user';
   const hasAttachments =
     message.experimental_attachments &&
@@ -481,7 +474,8 @@ function ChatMessage({
                     a: ({ node, ...props }) => (
                       <a {...props} target="_blank" rel="noopener noreferrer" />
                     ),
-                    img: ({ node, alt, src, ...props }: { node: any; alt?: string; src?: string | Blob; [key: string]: any }) => {
+                    img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
+                      const { alt, src } = props;
                       if (!src || typeof src !== 'string') return null;
 
                       try {
