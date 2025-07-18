@@ -1,15 +1,19 @@
+
+<h1 align="center">Dara</h1>
+
 <!-- Logo -->
 <p align="center">
   <img src="./public/dara.jpeg" alt="Dara Logo" width="1400" height="500" />
 </p>
-
-<h1 align="center">Dara</h1>
 
 <p align="center"><b>The Intelligent Copilot for Solana</b></p>
 
 <p align="center">
   <em>Futuristic, open-source AI for seamless Solana DeFi, NFT, and on-chain automation.</em>
 </p>
+
+
+![Product Demo](./public/product.png)
 
 ---
 
@@ -32,8 +36,6 @@
 </p>
 
 ---
-
-![Product Demo](./public/product.png)
 
 ## 🚀 Why Dara?
 
