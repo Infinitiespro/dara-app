@@ -1,11 +1,10 @@
-import { SavedPrompt } from '@prisma/client';
 import { Loader2 } from 'lucide-react';
 
 interface SavedPromptsMenuProps {
   input: string;
   isFetchingSavedPrompts: boolean;
-  savedPrompts: SavedPrompt[];
-  filteredPrompts: SavedPrompt[];
+  savedPrompts: any[]; // Changed from SavedPrompt[] to any[]
+  filteredPrompts: any[]; // Changed from SavedPrompt[] to any[]
   onPromptClick: (subtitle: string) => void;
   updatePromptLastUsedAt: (id: string) => Promise<void>;
   onHomeScreen?: boolean;

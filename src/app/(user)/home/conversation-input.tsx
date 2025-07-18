@@ -9,7 +9,6 @@ import {
 
 import Image from 'next/image';
 
-import { SavedPrompt } from '@prisma/client';
 import { Attachment } from 'ai';
 import { Image as ImageIcon, SendHorizontal, X } from 'lucide-react';
 import { toast } from 'sonner';
@@ -30,8 +29,8 @@ interface ConversationInputProps {
   onChange: (value: string) => void;
   onSubmit: (value: string, attachments: Attachment[]) => Promise<void>;
   onChat?: boolean;
-  savedPrompts: SavedPrompt[];
-  setSavedPrompts: Dispatch<SetStateAction<SavedPrompt[]>>;
+  savedPrompts: any[]; // Changed from SavedPrompt[] to any[]
+  setSavedPrompts: Dispatch<SetStateAction<any[]>>; // Changed from SavedPrompt[] to any[]
 }
 
 export const MAX_CHARS = 2000;

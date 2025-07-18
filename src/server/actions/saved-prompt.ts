@@ -1,6 +1,5 @@
 'use server';
 
-import { SavedPrompt } from '@prisma/client';
 import { z } from 'zod';
 
 import { ActionResponse, actionClient } from '@/lib/safe-action';
@@ -18,7 +17,7 @@ import { verifyUser } from './user';
 export const createSavedPrompt = actionClient
   .schema(z.object({ title: z.string(), content: z.string() }))
   .action<
-    ActionResponse<SavedPrompt>
+    ActionResponse<any>
   >(async ({ parsedInput: { title, content } }) => {
     const authResult = await verifyUser();
     const userId = authResult?.data?.data?.id;
@@ -62,7 +61,7 @@ export const deleteSavedPrompt = actionClient
 export const editSavedPrompt = actionClient
   .schema(z.object({ id: z.string(), title: z.string(), content: z.string() }))
   .action<
-    ActionResponse<SavedPrompt>
+    ActionResponse<any>
   >(async ({ parsedInput: { id, title, content } }) => {
     const authResult = await verifyUser();
     const userId = authResult?.data?.data?.id;
@@ -80,7 +79,7 @@ export const editSavedPrompt = actionClient
   });
 
 export const getSavedPrompts = actionClient.action<
-  ActionResponse<SavedPrompt[]>
+  ActionResponse<any[]>
 >(async () => {
   const authResult = await verifyUser();
   const userId = authResult?.data?.data?.id;
@@ -103,7 +102,7 @@ export const getSavedPrompts = actionClient.action<
 export const setIsFavoriteSavedPrompt = actionClient
   .schema(z.object({ id: z.string(), isFavorite: z.boolean() }))
   .action<
-    ActionResponse<SavedPrompt>
+    ActionResponse<any>
   >(async ({ parsedInput: { id, isFavorite } }) => {
     const authResult = await verifyUser();
     const userId = authResult?.data?.data?.id;
@@ -129,7 +128,7 @@ export const setIsFavoriteSavedPrompt = actionClient
 
 export const setSavedPromptLastUsedAt = actionClient
   .schema(z.object({ id: z.string() }))
-  .action<ActionResponse<SavedPrompt>>(async ({ parsedInput: { id } }) => {
+  .action<ActionResponse<any>>(async ({ parsedInput: { id } }) => {
     const authResult = await verifyUser();
     const userId = authResult?.data?.data?.id;
 

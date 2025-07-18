@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react';
 
-import { SavedPrompt } from '@prisma/client';
 import { motion } from 'framer-motion';
 import { Loader2, Pencil, Search, Star, Trash } from 'lucide-react';
 import { toast } from 'sonner';
@@ -63,7 +62,7 @@ export default function SavedPromptsPage() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
-  const [savedPrompts, setSavedPrompts] = useState<SavedPrompt[]>([]);
+  const [savedPrompts, setSavedPrompts] = useState<any[]>([]);
 
   const { user } = useUser();
 
@@ -117,8 +116,8 @@ export default function SavedPromptsPage() {
   }, [search, primaryFilteredPrompts]);
 
   function sortPrompts(
-    prompts: SavedPrompt[],
-    property: keyof SavedPrompt,
+    prompts: any[],
+    property: keyof any,
     swapComparison = false,
   ) {
     prompts.sort((a, b) => {

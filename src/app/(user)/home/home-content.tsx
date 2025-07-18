@@ -5,7 +5,6 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { SavedPrompt } from '@prisma/client';
 import { RiTwitterXFill } from '@remixicon/react';
 import { Attachment, JSONValue } from 'ai';
 import { useChat } from 'ai/react';
@@ -72,7 +71,7 @@ function SectionTitle({ children, icon }: SectionTitleProps) {
 
 export function HomeContent() {
   const pathname = usePathname();
-  const [savedPrompts, setSavedPrompts] = useState<SavedPrompt[]>([]);
+  const [savedPrompts, setSavedPrompts] = useState<any[]>([]);
   const [isFetchingSavedPrompts, setIsFetchingSavedPrompts] =
     useState<boolean>(true);
   const suggestions = useMemo(() => getRandomSuggestions(4), []);

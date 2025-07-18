@@ -11,7 +11,6 @@ import {
 
 import Image from 'next/image';
 
-import { SavedPrompt } from '@prisma/client';
 import { Attachment, JSONValue, Message } from 'ai';
 import { useChat } from 'ai/react';
 import {
@@ -80,7 +79,7 @@ interface ChatMessageProps {
   message: Message;
   index: number;
   messages: Message[];
-  setSavedPrompts: React.Dispatch<SetStateAction<SavedPrompt[]>>;
+  setSavedPrompts: React.Dispatch<SetStateAction<any[]>>;
   onPreviewImage: (preview: ImagePreview) => void;
   addToolResult: (result: ToolResult) => void;
 }
@@ -701,7 +700,7 @@ export default function ChatInterface({
   });
 
   const [previewImage, setPreviewImage] = useState<ImagePreview | null>(null);
-  const [savedPrompts, setSavedPrompts] = useState<SavedPrompt[]>([]);
+  const [savedPrompts, setSavedPrompts] = useState<any[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const {
     data: portfolio,
