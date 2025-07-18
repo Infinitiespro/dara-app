@@ -1,12 +1,11 @@
-import { Conversation } from '@prisma/client';
 import { create } from 'zustand';
 
 interface ConversationsState {
-  conversations: Conversation[];
+  conversations: any[];
   isLoading: boolean;
   activeId: string | null;
-  setConversations: (conversations: Conversation[]) => void;
-  addConversation: (conversation: Conversation) => void;
+  setConversations: (conversations: any[]) => void;
+  addConversation: (conversation: any) => void;
   removeConversation: (id: string) => void;
   setActiveId: (id: string | null) => void;
   setLoading: (loading: boolean) => void;
@@ -17,13 +16,13 @@ export const useConversationsStore = create<ConversationsState>((set: any) => ({
   conversations: [],
   isLoading: true,
   activeId: null,
-  setConversations: (conversations: Conversation[]) =>
+  setConversations: (conversations: any[]) =>
     set((state: ConversationsState) => ({
       ...state,
       conversations,
       isLoading: false,
     })),
-  addConversation: (conversation: Conversation) =>
+  addConversation: (conversation: any) =>
     set((state: ConversationsState) => ({
       ...state,
       conversations: [conversation, ...state.conversations],
@@ -32,7 +31,7 @@ export const useConversationsStore = create<ConversationsState>((set: any) => ({
     set((state: ConversationsState) => ({
       ...state,
       conversations: state.conversations.filter(
-        (c: Conversation) => c.id !== id,
+        (c: any) => c.id !== id,
       ),
     })),
   setActiveId: (id: string | null) =>
@@ -48,7 +47,7 @@ export const useConversationsStore = create<ConversationsState>((set: any) => ({
   markAsRead: (id: string) =>
     set((state: ConversationsState) => ({
       ...state,
-      conversations: state.conversations.map((c: Conversation) => {
+      conversations: state.conversations.map((c: any) => {
         if (c.id === id) {
           return { ...c, lastReadAt: new Date() };
         }
