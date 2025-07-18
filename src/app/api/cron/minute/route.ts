@@ -26,7 +26,7 @@ export async function GET(request: Request) {
   // This job runs every minute minute, but we only need to process actions that are ready to be processed, based on their frequency
   // Filter the actions to only include those that are ready to be processed based on their lastExecutedAt and frequency
   const now = new Date();
-  const actionsToProcess = actions.filter((action) => {
+  const actionsToProcess = actions.filter((action: any) => {
     // Filter out actions where user is not EAP or does not have an active subscription (allow all during trial mode)
     if (
       !action.user ||
@@ -57,8 +57,8 @@ export async function GET(request: Request) {
   });
 
   await Promise.all(
-    actionsToProcess.map((action) =>
-      processAction(action).catch((error) => {
+    actionsToProcess.map((action: any) =>
+      processAction(action).catch((error: any) => {
         console.error(`Error processing action ${action.id}:`, error);
       }),
     ),
