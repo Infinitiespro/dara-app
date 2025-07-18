@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
-import { Conversation } from '@prisma/client';
 import {
   Bell,
   ChevronDown,
@@ -295,7 +294,7 @@ export const AppSidebarConversations = () => {
               </p>
             ) : (
               <SidebarMenu>
-                {conversations.map((conversation: Conversation) => (
+                {conversations.map((conversation: any) => (
                   <ConversationMenuItem
                     key={conversation.id}
                     id={conversation.id}
