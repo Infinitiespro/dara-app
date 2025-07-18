@@ -20,13 +20,13 @@
     <img src="https://img.shields.io/badge/App-18181B?logo=solana&logoColor=white&style=for-the-badge" alt="App" height="28" />
   </a>
   <a href="https://docs.dara.sh" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Google%20Docs-4285F4?style=for-the-badge&logo=google-docs&logoColor=white" alt="Docs" height="28" />
+    <img src="https://img.shields.io/badge/Readthedocs-%23000000.svg?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Docs" height="28" />
   </a>
   <a href="https://x.com/ask_Dara" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter X" height="28" />
   </a>
   <a href="https://discord.gg/dara" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" height="28" />
+    <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" height="28" />
   </a>
   <a href="https://git.new/dara" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/GitHub-18181B?logo=github&logoColor=white&style=for-the-badge" alt="GitHub" height="28" />
