@@ -1,16 +1,7 @@
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-
-import { verifyUser } from '@/server/actions/user';
-import {
-  dbGetConversation,
-  dbGetConversationMessages,
-} from '@/server/db/queries';
-
-import ChatInterface from './chat-interface';
-import { ChatSkeleton } from './chat-skeleton';
+// Only import types at the top
 
 /**
  * Generates metadata for the chat page based on conversation details
@@ -20,6 +11,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
+  const { dbGetConversation } = await import('@/server/db/queries');
   const { id } = await params;
   
   // Retry mechanism to wait for conversation to be created
@@ -61,6 +53,11 @@ export async function generateMetadata({
  * Handles authentication, data loading, and access control
  */
 async function ChatData({ params }: { params: Promise<{ id: string }> }) {
+  const { dbGetConversation, dbGetConversationMessages } = await import('@/server/db/queries');
+  const { verifyUser } = await import('@/server/actions/user');
+  const { notFound } = await import('next/navigation');
+  const { default: ChatInterface } = await import('./chat-interface');
+
   const { id } = await params;
   
   // Retry mechanism to wait for conversation to be created
@@ -117,8 +114,10 @@ export default function ChatPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  const { default: ChatSkeleton } = require('./chat-skeleton');
   return (
     <Suspense fallback={<ChatSkeleton />}>
+      {/* @ts-expect-error Async Server Component */}
       <ChatData params={params} />
     </Suspense>
   );
