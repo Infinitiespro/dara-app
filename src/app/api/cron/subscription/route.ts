@@ -1,16 +1,28 @@
-import prisma from '@/lib/prisma';
-import { searchWalletAssets } from '@/lib/solana/helius';
-import { canAffordSubscription, getSubPriceFloat } from '@/lib/utils';
-import { transferTokenServer } from '@/server/utils';
-import { SOL_MINT } from '@/types/helius/portfolio';
-import { PaymentError, PaymentErrorCode } from '@/types/subscription';
+// Only import types at the top (if needed)
 
 export const maxDuration = 300;
 export const dynamic = 'force-dynamic'; // static by default, unless reading the request
 
 export async function GET(request: Request) {
+  // Defensive: move all imports inside the handler
+  const prisma = (await import('@/lib/prisma')).default;
+  const { searchWalletAssets } = await import('@/lib/solana/helius');
+  const { canAffordSubscription, getSubPriceFloat } = await import('@/lib/utils');
+  const { transferTokenServer } = await import('@/server/utils');
+  const { SOL_MINT } = await import('@/types/helius/portfolio');
+  const { PaymentError, PaymentErrorCode } = await import('@/types/subscription');
+
+  const CRON_SECRET = process.env.CRON_SECRET;
+  const EAP_RECEIVE_WALLET = process.env.NEXT_PUBLIC_EAP_RECEIVE_WALLET_ADDRESS;
+  if (!CRON_SECRET) {
+    return new Response('CRON_SECRET env var not set', { status: 500 });
+  }
+  if (!EAP_RECEIVE_WALLET) {
+    return new Response('NEXT_PUBLIC_EAP_RECEIVE_WALLET_ADDRESS env var not set', { status: 500 });
+  }
+
   const authHeader = request.headers.get('authorization');
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  if (authHeader !== `Bearer ${CRON_SECRET}`) {
     return new Response('Unauthorized', {
       status: 401,
     });
@@ -78,7 +90,7 @@ export async function GET(request: Request) {
       const response = await transferTokenServer({
         userId: subscription.userId,
         walletId: activeWallet.id,
-        receiverAddress: process.env.NEXT_PUBLIC_EAP_RECEIVE_WALLET_ADDRESS!,
+        receiverAddress: EAP_RECEIVE_WALLET,
         tokenAddress: SOL_MINT,
         amount: getSubPriceFloat(),
         tokenSymbol: 'SOL',
