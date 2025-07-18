@@ -9,7 +9,7 @@ import { AiParticlesBackground } from '@/components/ui/ai-particles-background';
 
 const navItems = [
   { label: 'Twitter', href: 'https://x.com/ask_Dara', icon: RiTwitterFill },
-  { label: 'Github', href: 'https://git.new/dara', icon: GitHubLogoIcon },
+  { label: 'Github', href: 'https://github.com/Infinitiespro/dara-app', icon: GitHubLogoIcon },
   { label: 'Docs', href: 'https://docs.dara.sh', icon: require('lucide-react').BookOpenIcon },
 ];
 
@@ -76,7 +76,7 @@ function Footer() {
               <RiTwitterFill className="h-5 w-5" />
             </Link>
             <Link
-              href="https://git.new/dara"
+              href="https://github.com/Infinitiespro/dara-app"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg p-2 text-muted-foreground transition-all duration-200 hover:bg-primary/10 hover:text-primary hover:scale-110"
