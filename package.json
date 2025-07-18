@@ -17,8 +17,7 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,md,json,js,jsx}\""
   },
   "engines": {
-    "node": ">=18.0.0 <23",
-    "npm": ">=9.0.0"
+    "node": ">=18.0.0 <23"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^1.1.0",
