@@ -6,10 +6,16 @@ import {
   dbGetConversationMessages,
 } from '@/server/db/queries';
 
+/**
+ * @param {import('next/server').NextRequest} req
+ * @param {{ params: { conversationId: string } }} context
+ */
 export async function GET(
-  req: NextRequest,
-  context: { params: { conversationId: string } }
+  req,
+  context
 ) {
+  const typedReq = req as import('next/server').NextRequest;
+  const typedContext = context as { params: { conversationId: string } };
   const session = await verifyUser();
   const userId = session?.data?.data?.id;
   const publicKey = session?.data?.data?.publicKey;
@@ -23,7 +29,7 @@ export async function GET(
     return NextResponse.json({ error: 'No public key found' }, { status: 400 });
   }
 
-  const { conversationId } = context.params;
+  const { conversationId } = typedContext.params;
 
   if (!conversationId) {
     return NextResponse.json(
