@@ -1,13 +1,13 @@
-import { NextRequest, NextResponse } from 'next/server';
-
-import { verifyUser } from '@/server/actions/user';
-import { dbDeleteAction, dbUpdateAction } from '@/server/db/queries';
-
+// Defensive: move all imports and logic inside the handlers to prevent build-time errors
 export async function DELETE(req: any, context: any) {
   const id = context?.params?.id;
   if (!id) {
     return new Response(JSON.stringify({ error: 'Missing id' }), { status: 400 });
   }
+  // Import only when handler is called
+  const { NextResponse } = await import('next/server');
+  const { verifyUser } = await import('@/server/actions/user');
+  const { dbDeleteAction } = await import('@/server/db/queries');
   try {
     const session = await verifyUser();
     const userId = session?.data?.data?.id;
@@ -40,6 +40,10 @@ export async function PATCH(req: any, context: any) {
   if (!id) {
     return new Response(JSON.stringify({ error: 'Missing id' }), { status: 400 });
   }
+  // Import only when handler is called
+  const { NextResponse } = await import('next/server');
+  const { verifyUser } = await import('@/server/actions/user');
+  const { dbUpdateAction } = await import('@/server/db/queries');
   try {
     const session = await verifyUser();
     const userId = session?.data?.data?.id;
