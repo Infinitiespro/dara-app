@@ -1,19 +1,15 @@
-import { NextRequest, NextResponse } from 'next/server';
+// Defensive top-level param check for Next.js build quirks
+export async function GET(req: any, context: any) {
+  const conversationId = context?.params?.conversationId;
+  if (!conversationId) {
+    return new Response(JSON.stringify({ error: 'Missing conversationId' }), { status: 400 });
+  }
 
-import { verifyUser } from '@/server/actions/user';
-import {
-  dbGetConversation,
-  dbGetConversationMessages,
-} from '@/server/db/queries';
+  // Move imports here so they only run if param is present
+  const { NextResponse } = await import('next/server');
+  const { verifyUser } = await import('@/server/actions/user');
+  const { dbGetConversationMessages } = await import('@/server/db/queries');
 
-/**
- * @param {import('next/server').NextRequest} req
- * @param {{ params: { conversationId: string } }} context
- */
-export async function GET(
-  req: any,
-  context: any
-) {
   const session = await verifyUser();
   const userId = session?.data?.data?.id;
   const publicKey = session?.data?.data?.publicKey;
@@ -25,18 +21,6 @@ export async function GET(
   if (!publicKey) {
     console.error('[chat/route] No public key found');
     return NextResponse.json({ error: 'No public key found' }, { status: 400 });
-  }
-
-  const conversationId = context?.params?.conversationId;
-  if (!conversationId) {
-    return new Response(JSON.stringify({ error: 'Missing conversationId' }), { status: 400 });
-  }
-
-  if (!conversationId) {
-    return NextResponse.json(
-      { error: 'Missing conversationId' },
-      { status: 401 },
-    );
   }
 
   try {
