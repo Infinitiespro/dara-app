@@ -10,6 +10,9 @@
 
 ![Product Demo](./public/product.png)
 
+
+
+
 ---
 
 <p align="center">
@@ -17,13 +20,13 @@
     <img src="https://img.shields.io/badge/App-18181B?logo=solana&logoColor=white&style=for-the-badge" alt="App" height="28" />
   </a>
   <a href="https://docs.dara.sh" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Docs-18181B?logo=readthedocs&logoColor=white&style=for-the-badge" alt="Docs" height="28" />
+    <img src="https://img.shields.io/badge/Google%20Docs-4285F4?style=for-the-badge&logo=google-docs&logoColor=white" alt="Docs" height="28" />
   </a>
   <a href="https://x.com/ask_Dara" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/X(Twitter)-18181B?logo=x&logoColor=white&style=for-the-badge" alt="Twitter X" height="28" />
+    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter X" height="28" />
   </a>
   <a href="https://discord.gg/dara" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Discord-18181B?logo=discord&logoColor=white&style=for-the-badge" alt="Discord" height="28" />
+    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" height="28" />
   </a>
   <a href="https://git.new/dara" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/GitHub-18181B?logo=github&logoColor=white&style=for-the-badge" alt="GitHub" height="28" />
