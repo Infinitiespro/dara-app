@@ -1,13 +1,21 @@
-import { IS_TRIAL_ENABLED } from '@/lib/utils';
-import { processAction } from '@/server/actions/action';
-import { dbGetActions } from '@/server/db/queries';
+// Only import types at the top (if needed)
 
 export const maxDuration = 300;
 export const dynamic = 'force-dynamic'; // static by default, unless reading the request
 
 export async function GET(request: Request) {
+  // Defensive: move all imports inside the handler
+  const { IS_TRIAL_ENABLED } = await import('@/lib/utils');
+  const { processAction } = await import('@/server/actions/action');
+  const { dbGetActions } = await import('@/server/db/queries');
+
+  const CRON_SECRET = process.env.CRON_SECRET;
+  if (!CRON_SECRET) {
+    return new Response('CRON_SECRET env var not set', { status: 500 });
+  }
+
   const authHeader = request.headers.get('authorization');
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  if (authHeader !== `Bearer ${CRON_SECRET}`) {
     return new Response('Unauthorized', {
       status: 401,
     });
