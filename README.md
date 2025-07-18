@@ -1,6 +1,6 @@
 <!-- Logo -->
 <p align="center">
-  <img src="./public/dara.jpeg" alt="Dara Logo" width="1000" height="120" />
+  <img src="./public/dara.jpeg" alt="Dara Logo" width="1000" height="500" />
 </p>
 
 <h1 align="center">Dara</h1>
