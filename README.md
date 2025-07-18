@@ -1,11 +1,6 @@
 
 <h1 align="center">Dara</h1>
 
-<!-- Logo -->
-<p align="center">
-  <img src="./public/dara.jpeg" alt="Dara Logo" width="1400" height="500" />
-</p>
-
 <p align="center"><b>The Intelligent Copilot for Solana</b></p>
 
 <p align="center">
@@ -56,17 +51,6 @@ Dara is your AI-native command center for the Solana blockchain. Effortlessly ma
 - **Modern UI**: Mobile-first, dark mode, and blazing fast
 - **Open Source**: Built with Next.js, TypeScript, Tailwind, Shadcn UI, and Radix UI
 
-## 🌐 Socials & Community
-
-<p>
-  <a href="https://x.com/ask_Dara" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" width="24" style="vertical-align:middle;"/> @ask_Dara</a> &nbsp;
-  <a href="https://discord.gg/dara" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" width="24" style="vertical-align:middle;"/> Discord</a> &nbsp;
-  <a href="https://docs.dara.sh" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/readthedocs.svg" alt="Docs" width="24" style="vertical-align:middle;"/> Docs</a> &nbsp;
-  <a href="https://dara.sh" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/solana.svg" alt="App" width="24" style="vertical-align:middle;"/> App</a> &nbsp;
-  <a href="https://git.new/dara" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" width="24" style="vertical-align:middle;"/> GitHub</a>
-</p>
-
----
 
 ## 🛠️ Quick Start
 
