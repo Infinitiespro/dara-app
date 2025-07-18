@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { PaymentStatus, SubscriptionPayment } from '@prisma/client';
+import { SubscriptionPayment } from '@prisma/client';
 import { ChevronDown, ExternalLink } from 'lucide-react';
 import useSWR from 'swr';
 
@@ -321,13 +321,13 @@ export function SubscriptionSection({
                                       {
                                         'bg-green-50 text-green-700':
                                           payment.status ===
-                                          PaymentStatus.SUCCESS,
+                                          'SUCCESS',
                                         'bg-red-50 text-red-700':
                                           payment.status ===
-                                          PaymentStatus.FAILED,
+                                          'FAILED',
                                         'bg-yellow-50 text-yellow-700':
                                           payment.status ===
-                                          PaymentStatus.PENDING,
+                                          'PENDING',
                                       },
                                     )}
                                   >
@@ -335,15 +335,15 @@ export function SubscriptionSection({
                                       payment.status.slice(1)}
                                   </span>
                                 </TableCell>
-                                {payment.status === PaymentStatus.FAILED && (
+                                {payment.status === 'FAILED' && (
                                   <TableCell>
                                     {payment.failureReason || ''}
                                   </TableCell>
                                 )}
-                                {payment.status === PaymentStatus.PENDING && (
+                                {payment.status === 'PENDING' && (
                                   <TableCell>Pending</TableCell>
                                 )}
-                                {payment.status === PaymentStatus.SUCCESS && (
+                                {payment.status === 'SUCCESS' && (
                                   <TableCell>
                                     <a
                                       href={`https://solscan.io/tx/${payment.transactionHash}`}
