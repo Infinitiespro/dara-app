@@ -117,7 +117,6 @@ export default function ChatPage({
   const { default: ChatSkeleton } = require('./chat-skeleton');
   return (
     <Suspense fallback={<ChatSkeleton />}>
-      {/* @ts-expect-error Async Server Component */}
       <ChatData params={params} />
     </Suspense>
   );
