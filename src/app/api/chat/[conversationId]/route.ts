@@ -27,7 +27,10 @@ export async function GET(
     return NextResponse.json({ error: 'No public key found' }, { status: 400 });
   }
 
-  const { conversationId } = context.params;
+  const conversationId = context?.params?.conversationId;
+  if (!conversationId) {
+    return new Response(JSON.stringify({ error: 'Missing conversationId' }), { status: 400 });
+  }
 
   if (!conversationId) {
     return NextResponse.json(
