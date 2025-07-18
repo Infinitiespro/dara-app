@@ -37,7 +37,7 @@ export async function GET(request: Request) {
     `[cron/subscription] Fetched ${activeSubscriptions.length} subscriptions to process`,
   );
 
-  const paymentPromises = activeSubscriptions.map(async (subscription) => {
+  const paymentPromises = activeSubscriptions.map(async (subscription: any) => {
     console.log(
       `[cron/subscription:${subscription.id}] Processing subscription`,
     );
@@ -55,7 +55,7 @@ export async function GET(request: Request) {
     try {
       // Validate user has valid active wallet
       const activeWallet = subscription.user?.wallets.find(
-        (wallet) => wallet.active,
+        (wallet: any) => wallet.active,
       );
       if (!activeWallet) {
         throw new PaymentError(
@@ -178,7 +178,7 @@ export async function GET(request: Request) {
   );
 
   const cancellationPromises = inactiveSubscriptions.map(
-    async (subscription) => {
+    async (subscription: any) => {
       console.log(
         `[cron/subscription:${subscription.id}] Cancelling subscription`,
       );
