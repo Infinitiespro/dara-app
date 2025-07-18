@@ -2,41 +2,38 @@
 
 > The Intelligent Copilot for Solana
 
-Dara is an **open-source**, full-stack application that brings together the power of LLM models and blockchain technology. Designed for the [Solana](https://solana.com/) ecosystem, Dara enables seamless interactions with DeFi protocols, NFTs, and much more.
+Dara is an **open-source**, full-stack application that combines advanced LLM models with blockchain technology. Built for the [Solana](https://solana.com/) ecosystem, Dara enables seamless, intelligent interactions with DeFi protocols, NFTs, and more.
 
-[![GitHub stars](https://img.shields.io/github/stars/DaraProjects/dara-app?style=flat-square)](https://github.com/DaraProjects/dara-app/stargazers)
-[![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](https://github.com/DaraProjects/dara-app/blob/main/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/DaraProjects/dara-app?style=flat-square)](https://github.com/DaraProjects/dara-app/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/DaraProjects/dara-app?style=flat-square)](https://github.com/DaraProjects/dara-app/pulls)
-[![Last commit](https://img.shields.io/github/last-commit/DaraProjects/dara-app?style=flat-square)](https://github.com/DaraProjects/dara-app/commits/main)
-[![Contributors](https://img.shields.io/github/contributors/DaraProjects/dara-app?style=flat-square)](https://github.com/DaraProjects/dara-app/graphs/contributors)
+---
 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
-![Solana](https://img.shields.io/badge/Solana-14F195?style=flat-square&logo=solana&logoColor=white&color=black)
+## Quick Links
+
+- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/solana.svg" alt="App" width="18" style="vertical-align:middle;"/> [App](https://dara.sh)
+- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/readthedocs.svg" alt="Docs" width="18" style="vertical-align:middle;"/> [Docs](https://docs.dara.sh)
+- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/x.svg" alt="Twitter" width="18" style="vertical-align:middle;"/> [Twitter (X)](https://x.com/ask_Dara)
+- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/discord.svg" alt="Discord" width="18" style="vertical-align:middle;"/> [Discord](https://discord.gg/dara)
+- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg" alt="GitHub" width="18" style="vertical-align:middle;"/> [GitHub](https://git.new/dara)
+
+---
 
 ![Product Demo](./public/product.png)
 
 ## Features
 
-- **Modern UI**: Beautiful, responsive design with Tailwind CSS, Mobile-friendly, Dark Mode
-- **Intelligent Agent**: Natural language understanding tailored for DeFi, NFTs, and Solana-native interactions
-- **Smart Tools**: Execute complex blockchain operations using our advanced function-calling system
-- **Embedded Wallet**: Integrated wallet management with real-time portfolio insights
-- **DeFi Integration**: Access to swaps, staking, and cross-platform functionalities
-- **NFT Suite**: Comprehensive NFT collection management and analysis
-- **Live Analytics**: Real-time market trends and portfolio performance tracking
-- **Ecosystem Access**: Direct integration with Jupiter, Magic Eden, and other Solana services
+- **Modern UI**: Responsive, mobile-first design with Tailwind CSS and Shadcn UI
+- **Intelligent Agent**: Natural language understanding for DeFi, NFTs, and Solana-native actions
+- **Smart Tools**: Advanced function-calling for complex blockchain operations
+- **Embedded Wallet**: Integrated wallet management and real-time portfolio insights
+- **DeFi Integration**: Swaps, staking, and cross-platform DeFi tools
+- **NFT Suite**: NFT collection management and analytics
+- **Live Analytics**: Real-time market trends and portfolio tracking
+- **Ecosystem Access**: Integrations with Jupiter, Magic Eden, and more
 
 ## Roadmap
 
-We aim to build the **most advanced interface** for the Solana Network, enabling users to design AI agents for **autonomous actions and custom strategies**. These agents merge live blockchain data with real-time internet insights, offering an integrated solution for managing the crypto ecosystem.
-
-Our current focus is developing **core infrastructure and agent functionality**.
+We are building the most advanced interface for the Solana Network, enabling users to design AI agents for autonomous actions and custom strategies. Dara merges live blockchain data with real-time internet insights for a unified crypto management experience.
 
 ### Core Infrastructure
-
 - [x] Landing Page
 - [x] User Model
 - [x] Chat Interface
@@ -46,7 +43,6 @@ Our current focus is developing **core infrastructure and agent functionality**.
   - [ ] Migrate to Phantom Embedded Wallet
 
 ### Agent Capabilities
-
 - [x] Multi-Tool Usage
 - [ ] Multimodal
   - [x] Image
@@ -57,7 +53,6 @@ Our current focus is developing **core infrastructure and agent functionality**.
   - [ ] Twitter Search
 
 ### Solana Integration
-
 - [x] SNS (Solana Name Service) Resolver
 - [x] Wallet Portfolio
 - [ ] Transaction Parser
@@ -81,24 +76,22 @@ Our current focus is developing **core infrastructure and agent functionality**.
   - [x] Magic Eden Integration
 
 ### Market Intelligence
-
 - [x] Token Trends (via Defined.fi)
 - [x] NFT Trends (via Magic Eden)
 
 ### Automation
-
 - [ ] Automated On-Chain Actions
 - [ ] Personalized Agent
 - [ ] Trading AI
 
+## Getting Started
+
+See [LOCAL_DEV.md](LOCAL_DEV.md) for local development instructions.
+
 ## Contributing
 
-We welcome contributions from the community! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+We welcome contributions from the community! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## Development
+## License
 
-Information about setting up a local development environment can be found in [LOCAL_DEV.md](LOCAL_DEV.md).
-
-## Acknowledgements
-
-SendAI. (2025). Solana Agent Kit (Version 1.2.0) [Computer software]. https://github.com/sendaifun/solana-agent-kit
+MIT © Dara Projects
