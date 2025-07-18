@@ -8,7 +8,7 @@ import {
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { conversationId: string } },
+  context: { params: { [key: string]: string } }
 ) {
   const session = await verifyUser();
   const userId = session?.data?.data?.id;
@@ -23,7 +23,7 @@ export async function GET(
     return NextResponse.json({ error: 'No public key found' }, { status: 400 });
   }
 
-  const { conversationId } = params;
+  const { conversationId } = context.params;
 
   if (!conversationId) {
     return NextResponse.json(
