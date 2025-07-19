@@ -30,42 +30,42 @@ export default function MemoriesPage() {
             <BentoCard
               name="Contextual Recall"
               className=""
-              background={<ShineBorder color={["#8be9fd", "#ffb86c"]} borderRadius={18} borderWidth={2} duration={12} />}
+              background={<ShineBorder color={["#8be9fd", "#ffb86c"]} borderRadius={18} borderWidth={2} duration={12}><></></ShineBorder>}
               Icon={Brain}
               description="Remembers your preferences, conversations, and workflows for seamless, personalized experiences."
             />
             <BentoCard
               name="Secure & Private"
               className=""
-              background={<ShineBorder color={["#50fa7b", "#ff79c6"]} borderRadius={18} borderWidth={2} duration={14} />}
+              background={<ShineBorder color={["#50fa7b", "#ff79c6"]} borderRadius={18} borderWidth={2} duration={14}><></></ShineBorder>}
               Icon={Lock}
               description="Your memories are end-to-end encrypted. Only you and your agent can access them—never shared, always protected."
             />
             <BentoCard
               name="Cross-Session Intelligence"
               className=""
-              background={<ShineBorder color={["#bd93f9", "#ffb86c"]} borderRadius={18} borderWidth={2} duration={16} />}
+              background={<ShineBorder color={["#bd93f9", "#ffb86c"]} borderRadius={18} borderWidth={2} duration={16}><></></ShineBorder>}
               Icon={Cloud}
               description="Persistent memory across devices and sessions. Pick up where you left off, anywhere, anytime."
             />
             <BentoCard
               name="Customizable"
               className=""
-              background={<ShineBorder color={["#f1fa8c", "#8be9fd"]} borderRadius={18} borderWidth={2} duration={18} />}
+              background={<ShineBorder color={["#f1fa8c", "#8be9fd"]} borderRadius={18} borderWidth={2} duration={18}><></></ShineBorder>}
               Icon={Settings2}
               description="You control what’s remembered. Fine-tune, edit, or erase memories with intuitive controls."
             />
             <BentoCard
               name="Evolving Intelligence"
               className=""
-              background={<ShineBorder color={["#ff79c6", "#50fa7b"]} borderRadius={18} borderWidth={2} duration={20} />}
+              background={<ShineBorder color={["#ff79c6", "#50fa7b"]} borderRadius={18} borderWidth={2} duration={20}><></></ShineBorder>}
               Icon={Sparkles}
               description="Your agent learns and adapts, becoming smarter and more helpful with every interaction."
             />
             <BentoCard
               name="Coming Soon"
               className=""
-              background={<ShineBorder color={["#ffb86c", "#bd93f9"]} borderRadius={18} borderWidth={2} duration={22} />}
+              background={<ShineBorder color={["#ffb86c", "#bd93f9"]} borderRadius={18} borderWidth={2} duration={22}><></></ShineBorder>}
               Icon={Shield}
               description="Next-gen memory features are on the horizon. Stay tuned for even more powerful, futuristic capabilities."
             />
